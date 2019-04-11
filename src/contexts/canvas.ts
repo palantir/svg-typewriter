@@ -91,13 +91,13 @@ export class CanvasContext implements ITypesetterContext<CanvasRenderingContext2
                 if (this.style.font != null) {
                     ctx.font = this.style.font;
                 }
+                if (this.style.stroke != null) {
+                    ctx.strokeStyle = this.style.stroke;
+                    ctx.strokeText(line, xOffset, yOffset);
+                }
                 if (this.style.fill != null) {
                     ctx.fillStyle = this.style.fill;
                     ctx.fillText(line, xOffset, yOffset);
-                }
-                if (this.style.stroke != null) {
-                    ctx.strokeStyle = this.style.fill;
-                    ctx.strokeText(line, xOffset, yOffset);
                 }
             },
         };
